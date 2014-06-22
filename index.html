@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SVG Filters</title>
+  <link rel="stylesheet" href="main.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <script type="text/javascript" src="spectrum.js"></script>
+  <script type="text/javascript" src="tinycolor.js"></script>
+  <link rel="stylesheet" href="spectrum.css" />
+</head>
+<body>
+  <h1>SVG Filters</h1>
+  <svg xmlns="http://www.w3.org/2000/svg" height="0">
+    <filter id="Filter" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncR class="brightness red" type="linear" slope="1"/>
+        <feFuncG class="brightness green" type="linear" slope="1"/>
+        <feFuncB class="brightness blue" type="linear" slope="1"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+  <div class="image filtered"></div>
+  <img class="filtered" src="white.png" style="filter: url('#Filter');" />
+
+  <div id="Photo">
+    <div id="Controls">
+      <a href="#" id="Control"><img src="logo.png" style="filter: url('#Filter');" /></a>
+      <div id="Background"></div>
+    </div>
+  </div>
+
+
+  <input type="text" id="Colour" />
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
